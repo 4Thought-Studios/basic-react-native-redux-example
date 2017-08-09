@@ -1,17 +1,18 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import movies from '../movies.json';
+import { connect } from 'react-redux';
 
 class HomeScreen extends React.Component {
-    static navigationOptions = {
+    static navigationOptions = ({navigation}) => ({
         title: 'Home',
-    };
+        headerRight: <Button title="Add" onPress={() => navigation.navigate('Add')}/>
+    });
 
     render() {
         return (
             <View style={styles.container}>
                 <FlatList 
-                    data={movies}
+                    data={this.props.movies}
                     renderItem={({item}) => (
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Details', { item })}style={styles.itemContainer}>
                             <View style={styles.itemDetails}>
@@ -58,4 +59,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default HomeScreen;
+const mapStateToProps = (store) => (
+    {
+        movies: store.movies
+    }
+);
+
+export default connect(mapStateToProps)(HomeScreen);
