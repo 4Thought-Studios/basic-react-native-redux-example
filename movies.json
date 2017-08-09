@@ -1,0 +1,32 @@
+[
+    {
+        "key": 0,
+        "title": "Star Wars",
+        "releaseYear": "1977",
+        "details": "Angsty kid plays with an old man, a machine, and a princess to try and get in touch with his spiritual side"
+    },
+    {
+        "key": 1,
+        "title": "Back to the Future",
+        "releaseYear": "1985",
+        "details": "Angsty kid plays with an old man to go back in time to right history while avoiding sleeping with his mother."
+    },
+    {
+        "key": 2,
+        "title": "The Matrix",
+        "releaseYear": "1999",
+        "details": "Angsty guy gets fed up with an office job, takes some drugs that melt his brain, and imagines himeself practicing kung-fu."
+    },
+    {
+        "key": 3,
+        "title": "Inception",
+        "releaseYear": "2010",
+        "details": "No one really knows what this is all about. Layers. I guess..."
+    },
+    {
+        "key": 4,
+        "title": "Interstellar",
+        "releaseYear": "2014",
+        "details": "Angsty man attempts so save the human race while getting creeped out by a ghostly thing that is actually himself."
+    }
+]
