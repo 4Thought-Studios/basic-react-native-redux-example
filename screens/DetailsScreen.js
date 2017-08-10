@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import { connect } from 'react-redux';
+
 class DetailsScreen extends React.Component {
     static navigationOptions = {
         title: 'Details',
     };
 
     render() {
-        const movie = this.props.navigation.state.params.item;
+        const movie = this.props.movie;
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>{movie.title}</Text>
@@ -37,4 +39,10 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DetailsScreen;
+const mapStateToProps = (store, ownProps) => (
+    {
+        movie: store.movies.filter((m) => m.key === ownProps.navigation.state.params.movieKey)[0]
+    }
+);
+
+export default connect(mapStateToProps)(DetailsScreen);
